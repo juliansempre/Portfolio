@@ -22,7 +22,7 @@ export class HeaderComponent implements AfterViewInit {
   // Método executado após a visualização ser inicializada
   ngAfterViewInit() {
     this.texto = this.elementRef.nativeElement.querySelector('.texto');
-    this.apresentacao('Desenvolvedor Full Stack');
+    this.apresentacao();
 
   }
 
@@ -34,21 +34,33 @@ export class HeaderComponent implements AfterViewInit {
     this.github = "c";
     this.instagram = "d";
   }
+  link: string[] = [
+    'mailto:julian_sempre@hotmail.com',
+    'https://www.linkedin.com/in/julian-silva/',
+    'https://github.com/juliansempre',
+    'https://www.instagram.com/juliandev.webart/'
+  ];
 
-  apresentacao(mensagem: string) {
+  apresentacao() {
     this.traco = "<b>|</b>";
     if (this.texto) {
-      const textoOriginal = mensagem;
+      const textoOriginal: string[] = [
+        'Desenvolvedor Full Stack',
+        'Software Developer',
+        'Apaixonado por Tecnologia',
+        'Construindo Soluções Criativas'
+      ];
       let index = 0;
       let adding = true;
+      let messageIndex = 0; // Índice da mensagem atual
 
       const animate = () => {
         if (adding) {
-          const newText = textoOriginal.slice(0, index + 1);
-          this.renderer.setProperty(this.texto, 'innerHTML', newText + this.traco );
+          const newText = textoOriginal[messageIndex].slice(0, index + 1);
+          this.renderer.setProperty(this.texto, 'innerHTML', newText + this.traco);
           index++;
 
-          if (index > textoOriginal.length) {
+          if (index > textoOriginal[messageIndex].length) {
             adding = false;
             setTimeout(() => {
               animateRemove();
@@ -62,26 +74,26 @@ export class HeaderComponent implements AfterViewInit {
       };
 
       const animateRemove = () => {
-        const newText = textoOriginal.slice(0, index - 1);
-        this.renderer.setProperty(this.texto, 'innerHTML', newText + this.traco );
+        const newText = textoOriginal[messageIndex].slice(0, index - 1);
+        this.renderer.setProperty(this.texto, 'innerHTML', newText + this.traco);
         index--;
 
         if (index <= 0) {
-
           adding = true;
           this.renderer.setProperty(this.texto, 'innerHTML', newText);
-          setTimeout(() => {
-           animate();
-            //para animacao
-          // clearInterval;
-          }, 2000);
+          messageIndex = (messageIndex + 1) % textoOriginal.length; // Avança para a próxima mensagem
 
+          setTimeout(() => {
+            index = 0; // Reinicia o índice
+            animate();
+          }, 2000);
         } else {
           setTimeout(() => {
             animateRemove();
           }, 100);
         }
       };
+
       animate();
     }
   }
