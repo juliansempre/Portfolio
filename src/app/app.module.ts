@@ -5,6 +5,7 @@ import { AppComponent } from './app.component';
 import { MainComponent } from './components/main/main.component';
 import { HeaderComponent } from './components/header/header.component';
 import { ApresentacaoComponent } from './components/apresentacao/apresentacao.component';
+import { ProjetosComponent } from './components/projetos/projetos.component';
 
 
 @NgModule({
@@ -12,7 +13,8 @@ import { ApresentacaoComponent } from './components/apresentacao/apresentacao.co
     AppComponent,
     MainComponent,
     HeaderComponent,
-    ApresentacaoComponent
+    ApresentacaoComponent,
+    ProjetosComponent
   ],
   imports: [
     BrowserModule,

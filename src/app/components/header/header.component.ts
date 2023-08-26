@@ -30,7 +30,7 @@ export class HeaderComponent implements AfterViewInit {
   // Método executado após a visualização ser inicializada
   ngAfterViewInit() {
     this.texto = this.elementRef.nativeElement.querySelector('.texto');
-    this.subir = this.elementRef.nativeElement.querySelector('.lsubir');
+    this.subir = this.elementRef.nativeElement.querySelector('.subir');
     this.apresentacao();
 
   }

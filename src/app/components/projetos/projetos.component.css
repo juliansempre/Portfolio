@@ -1,0 +1,21 @@
+.containerPrincipalProjetos{
+  width: 100%;
+  height: 600px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+.tituloprojeto{
+  margin-top: 20px;
+  align-items: center;
+  font-size: 28px;
+  transform: scale(1.5);
+  background-image: linear-gradient(45deg, cyan, blue);
+  background-clip: text;
+  -webkit-background-clip: text; /* Para compatibilidade com navegadores baseados em Webkit */
+  color: transparent;
+  display: grid;
+  place-items: center;
+  margin-bottom: 100px;
+}
