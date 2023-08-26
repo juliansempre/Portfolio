@@ -56,3 +56,20 @@
 .redes svg{
 
 }
+.arrow-bottom{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, 400%);
+  animation-name: down;
+  animation-duration: 1s;
+  animation-iteration-count:infinite;
+}
+@keyframes down {
+  0% { transform: translate(-50%, 400%); }
+  50% { transform: translate(-50%, 415%); }
+  100% { transform: translate(-50%, 400%); }
+}
+.arrow-bottom:hover{
+  animation-play-state: paused;
+}
