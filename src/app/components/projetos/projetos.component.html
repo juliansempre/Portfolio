@@ -1,3 +1,33 @@
 <p [ngClass]="{'tituloprojeto':'true'}">Projetos</p>
 <div [ngClass]="{'containerPrincipalProjetos':'true'}">
+
+  <!-- <h1>Lista de Dados</h1>
+
+  <table>
+    <tr>
+      <th>ID</th>
+      <th>Nome</th>
+      <th>Email</th>
+      <th>Fone</th>
+    </tr>
+    <tr *ngFor="let item of data">
+      <td>{{ item.id }}</td>
+      <td>{{ item.name }}</td>
+      <td>{{ item.url }}</td>
+      <td>{{ item.private }}</td>
+    </tr>
+  </table> -->
+  <div *ngFor="let item of data" class="card" style="width: 18rem; height:400px; background-color: black;">
+    <img class="card-img-top" src="{{logoGit}}" alt="Card image cap">
+    <div class="card-body">
+      <!-- Verifique a propriedade 'visibility' antes de exibir -->
+      <ng-container *ngIf="item.visibility === 'public'">
+        <h5 class="card-title" style="color: white;">{{ item.name }}</h5>
+        <p class="card-text" style="color: white;">{{item.description}}</p>
+        <a href="https://github.com/juliansempre/{{ item.name }}">Visitar projeto</a>
+        <a href="{{ item.homepage }}">Visitrojeto</a>
+      </ng-container>
+    </div>
+  </div>
+
 </div>
