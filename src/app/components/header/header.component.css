@@ -73,20 +73,3 @@
 .arrow-bottom:hover{
   animation-play-state: paused;
 }
-.imagemsub{
-  position: fixed;
-  bottom: 0;
-  right: 0;
-  margin-right: 5px;
-  margin-bottom: 5px;
-  width: 40px;
-  filter: brightness(10);
-  background-color: blue;
-}
-.lsubir{
-  position: fixed;
-  bottom: 0;
-  right: 0;
-  background-color: red;
-  z-index: 5;
-}
