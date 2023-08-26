@@ -5,14 +5,14 @@
 .cabecalho{
   width: 100%;
   height: 600px;
-  border: solid white 1px;
+  /* border: solid white 1px; */
 }
 .cabecalho img:nth-child(1){
   width: 300px;
   position:absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -70%);
+  transform: translate(-50%, -90%);
   animation-name: lo;
   animation-duration: 10s;
   animation-iteration-count:infinite;
@@ -29,7 +29,7 @@
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, 140%);
+  transform: translate(-50%, -60%);
   font-size: 22px;
   line-height: 1.5;
   letter-spacing: 4px;
@@ -46,10 +46,10 @@
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, 140%);
+  transform: translate(-50%, 70%);
   display: grid;
   grid-auto-flow: column;
-  gap: 10px;
+  gap: 20px;
   align-items: center;
   justify-content: center;
 }
@@ -60,16 +60,33 @@
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, 400%);
+  transform: translate(-50%, 300%);
   animation-name: down;
   animation-duration: 1s;
   animation-iteration-count:infinite;
 }
 @keyframes down {
-  0% { transform: translate(-50%, 400%); }
-  50% { transform: translate(-50%, 415%); }
-  100% { transform: translate(-50%, 400%); }
+  0% { transform: translate(-50%, 300%); }
+  50% { transform: translate(-50%, 315%); }
+  100% { transform: translate(-50%, 300%); }
 }
 .arrow-bottom:hover{
   animation-play-state: paused;
+}
+.imagemsub{
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  margin-right: 5px;
+  margin-bottom: 5px;
+  width: 40px;
+  filter: brightness(10);
+  background-color: blue;
+}
+.lsubir{
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  background-color: red;
+  z-index: 5;
 }

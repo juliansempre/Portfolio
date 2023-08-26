@@ -9,37 +9,40 @@ export class HeaderComponent implements AfterViewInit {
   // Atributos
   logo = "";
   texto: any;
+  subir: any;
   email = "";
   linkedin = "";
   github = "";
   instagram = "";
   traco = "";
-  // Construtor
-  constructor(private renderer: Renderer2, private elementRef: ElementRef) {
-    this.header();
-  }
-
-  // Método executado após a visualização ser inicializada
-  ngAfterViewInit() {
-    this.texto = this.elementRef.nativeElement.querySelector('.texto');
-    this.apresentacao();
-
-  }
-
-  // Operações
-  header() {
-    this.logo = "assets/img/Logop.png";
-    this.email = "a";
-    this.linkedin = "b";
-    this.github = "c";
-    this.instagram = "d";
-  }
   link: string[] = [
     'mailto:julian_sempre@hotmail.com',
     'https://www.linkedin.com/in/julian-silva/',
     'https://github.com/juliansempre',
     'https://www.instagram.com/juliandev.webart/'
   ];
+
+  // Construtor
+  constructor(private renderer: Renderer2, private elementRef: ElementRef) {
+    this.logo = "assets/img/Logop.png";
+  }
+
+  // Método executado após a visualização ser inicializada
+  ngAfterViewInit() {
+    this.texto = this.elementRef.nativeElement.querySelector('.texto');
+    this.subir = this.elementRef.nativeElement.querySelector('.linksubir');
+    this.apresentacao();
+
+  }
+
+  // Operações
+
+  subirbotao(){
+    setTimeout(()=>{
+      this.subir.scrollIntoView({ behavior: 'smooth' });
+    },1000)
+
+  }
 
   apresentacao() {
     this.traco = "<b>|</b>";
