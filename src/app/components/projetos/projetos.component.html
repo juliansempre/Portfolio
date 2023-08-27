@@ -19,17 +19,18 @@
   </table> -->
   <div *ngFor="let item of data" class="card" style="width: 25rem; border-radius: 10%; height:190px; background-color: black;">
     <div class="card-body">
+      <a href="https://github.com/juliansempre/{{ item.name }}" target="_blank">
       <!-- Verifique a propriedade 'visibility' antes de exibir -->
       <ng-container *ngIf="item.visibility === 'public'">
         <h5 class="card-title" style="color: white;">☑ {{ item.name }}</h5>
         <p class="card-text" style="color: white;">{{item.description}}</p>
         <p style="text-align: right; font-weight: bold;">{{ item.languages?.join(', ') || 'N/A' }}</p>
-        <a href="https://github.com/juliansempre/{{ item.name }}" target="_blank">
+
         <img width="70px" height="20px" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSAfR0pCJY_XVOpoqJ1yBR2S6hyQCu3dBmYVg&usqp=CAU">
-        </a>
+
         <a *ngIf="item.homepage != '' && item.homepage != null " href="{{ item.homepage }}" target="_blank"> Ver deploy </a>
       </ng-container>
-
+    </a>
     </div>
   </div>
 

@@ -1,3 +1,7 @@
+a{
+  text-decoration: none;
+}
+
 a:nth-child(5){
   text-decoration: none;
   font-weight: bold;
@@ -15,6 +19,7 @@ a:nth-child(5):hover{
   margin-left: 20px;
   border-radius: 5px;
   padding: 2px 2px 2px 2px;
+  border: solid 1px white;
 }
 .containerPrincipalProjetos{
   width: 100%;

@@ -2,7 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&family=Poppins:wght@400;500;600&display=swap');
 
 *{
-  border: 1px solid white;
+  /* border: 1px solid white; */
 }
 body{
   background-color: rgb(43, 43, 43);
