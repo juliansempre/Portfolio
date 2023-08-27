@@ -7,6 +7,7 @@ import { HeaderComponent } from './components/header/header.component';
 import { ApresentacaoComponent } from './components/apresentacao/apresentacao.component';
 import { ProjetosComponent } from './components/projetos/projetos.component';
 import { HttpClientModule } from '@angular/common/http';
+import { RodapeComponent } from './components/rodape/rodape.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { HttpClientModule } from '@angular/common/http';
     MainComponent,
     HeaderComponent,
     ApresentacaoComponent,
-    ProjetosComponent
+    ProjetosComponent,
+    RodapeComponent
   ],
   imports: [
     BrowserModule,

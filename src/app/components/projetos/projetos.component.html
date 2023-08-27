@@ -17,17 +17,22 @@
       <td>{{ item.private }}</td>
     </tr>
   </table> -->
-  <div *ngFor="let item of data" class="card" style="width: 18rem; height:400px; background-color: black;">
-    <img class="card-img-top" src="{{logoGit}}" alt="Card image cap">
+  <div *ngFor="let item of data" class="card" style="width: 25rem; border-radius: 10%; height:190px; background-color: black;">
     <div class="card-body">
       <!-- Verifique a propriedade 'visibility' antes de exibir -->
       <ng-container *ngIf="item.visibility === 'public'">
-        <h5 class="card-title" style="color: white;">{{ item.name }}</h5>
+        <h5 class="card-title" style="color: white;">☑ {{ item.name }}</h5>
         <p class="card-text" style="color: white;">{{item.description}}</p>
-        <a href="https://github.com/juliansempre/{{ item.name }}">Visitar projeto</a>
-        <a href="{{ item.homepage }}">Visitrojeto</a>
+        <p style="text-align: right; font-weight: bold;">{{ item.languages?.join(', ') || 'N/A' }}</p>
+        <a href="https://github.com/juliansempre/{{ item.name }}" target="_blank">
+        <img width="70px" height="20px" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSAfR0pCJY_XVOpoqJ1yBR2S6hyQCu3dBmYVg&usqp=CAU">
+        </a>
+        <a *ngIf="item.homepage != '' && item.homepage != null " href="{{ item.homepage }}" target="_blank"> Ver deploy </a>
       </ng-container>
+
     </div>
   </div>
 
 </div>
+<div [ngClass]="{'vermais': 'true'}"><a [ngClass]="{'btn btn-primary':'true'}" (click)="apresentacaovermais()">{{vermaisrecolher}}</a></div>
+

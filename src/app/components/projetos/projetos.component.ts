@@ -6,8 +6,11 @@ interface MyData {
   name: string;
   url: string;
   visibility: string;
-  homepage: string,
-  description: string
+  homepage: string;
+  description: string;
+  updated_at: any;
+  languages_url: any;
+  languages: any;
   // outras propriedades
 }
 
@@ -18,6 +21,7 @@ interface MyData {
 })
 export class ProjetosComponent implements AfterViewInit, OnInit  {
   logoGit = "https://t4.ftcdn.net/jpg/03/85/94/91/360_F_385949189_W1ydL4Z3c6Uy2OfB9rZNdbxVaIMOs16F.jpg";
+  vermaisrecolher: string = 'Ver mais';
   data: MyData[] = []; // Inicializa a propriedade data com um array vazio
 
   // Propriedades para manipulação dos dados
@@ -27,7 +31,10 @@ export class ProjetosComponent implements AfterViewInit, OnInit  {
     url: '',
     visibility: '',
     homepage: '',
-    description: ''
+    description: '',
+    updated_at: null,
+    languages_url: '',
+    languages: ''
     // outras propriedades
   };
   container: any;
@@ -36,7 +43,6 @@ export class ProjetosComponent implements AfterViewInit, OnInit  {
   }
   ngAfterViewInit() {
     this.container = this.elementRef.nativeElement.querySelector('.containerPrincipalProjetos');
-    this.apresentacao();
   }
 
   ngOnInit() {
@@ -45,36 +51,44 @@ export class ProjetosComponent implements AfterViewInit, OnInit  {
 
   getData() {
     this.http.get<MyData[]>('https://api.github.com/users/juliansempre/repos').subscribe(
-      (data) => {
+      async (data) => {
+         this.data = data.sort((a, b) => new Date(b.updated_at).getTime() - new Date(a.updated_at).getTime());
+        for (const item of data) {
+          try {
+            const response = await this.http.get<any>(item.languages_url).toPromise();
+            item.languages = Object.keys(response);
+          } catch (error) {
+            console.error('Error fetching languages for item', item.name, error);
+          }
+        }
         this.data = data;
       },
       (error) => {
         console.log(error);
       }
     );
-
   }
 
-
-  apresentacao() {
-
-    //cards
-    let img = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQK9mUlAqrgVEReF8bBAmLYdVzugvK_gOOnMg&usqp=CAU";
-    const cardprojeto: string[] = [
-      `
-      <div class="card" style="width: 18rem; height: 300px; background-color: black;">
-      <img class="card-img-top" src="` +img+ `" alt="Card image cap">
-      <div class="card-body">
-        <h5 class="card-title" style="color: white;">Card title</h5>
-        <p class="card-text" style="color: white;">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-      </div>
-    </div>
-
-      `
-    ];
-
+  apresentacaovermais() {
     if (this.container) {
-    //  this.renderer.setProperty(this.container, 'innerHTML', cardprojeto);
+      var acao1 = this.container.style.overflow === 'visible';
+      var acao2 = this.container.style.height === 'auto';
+
+      if (acao1) {
+        this.renderer.setProperty(this.container, 'style', 'overflow: hidden;');
+      } else {
+        this.renderer.setProperty(this.container, 'style', 'overflow: visible;');
+        this.vermaisrecolher = "Recolher";
+      }
+
+      if (acao2) {
+        this.renderer.setProperty(this.container, 'style', 'height: 600px;');
+        this.vermaisrecolher = "Ver mais";
+      } else {
+        this.renderer.setProperty(this.container, 'style', 'height: auto;');
+      }
     }
   }
+
+
 }

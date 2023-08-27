@@ -1,3 +1,21 @@
+a:nth-child(5){
+  text-decoration: none;
+  font-weight: bold;
+  color: black;
+  background-color: white;
+  margin-left: 20px;
+  border-radius: 5px;
+  padding: 2px 2px 2px 2px;
+}
+a:nth-child(5):hover{
+  text-decoration: none;
+  font-weight: bold;
+  color: white;
+  background-color: black;
+  margin-left: 20px;
+  border-radius: 5px;
+  padding: 2px 2px 2px 2px;
+}
 .containerPrincipalProjetos{
   width: 100%;
   height: 600px;
@@ -5,6 +23,7 @@
   justify-content: center;
   flex-wrap: wrap;
   gap: 20px;
+  overflow: hidden;
 }
 .tituloprojeto{
   margin-top: 20px;
@@ -18,4 +37,24 @@
   display: grid;
   place-items: center;
   margin-bottom: 100px;
+}
+.vermais{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+}
+.vermais a{
+  animation-name: animaver;
+  animation-timing-function: ease-in-out;
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
+}
+@keyframes animaver {
+  0%{transform: translateY(0px);}
+  50%{transform: translateY(-5px);}
+  100%{transform: translateY(0px);}
+}
+.vermais a:hover{
+  animation-play-state: paused;
 }
