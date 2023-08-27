@@ -1,0 +1,18 @@
+<p [ngClass]="{'tituloprojeto':'true'}">Destaques</p>
+<div [ngClass]="{'containerDestaques':'true'}">
+
+  <div *ngFor="let item of items; let i = index" class="card" style="width: 28rem; border-radius: 12px; background-color: black; color: white;">
+    <a href="{{item.link}}" target="_blank">
+    <p>{{item.nome}}</p>
+    <img class="card-img-top" height="350px" src="{{item.imagem}}" alt="Card image cap">
+    <div class="card-body">
+      <p class="card-text">{{item.descricao}}</p>
+    </div>
+  </a>
+  <a href="{{item.git}}" target="_blank">
+    <img width="70px" height="20px" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSAfR0pCJY_XVOpoqJ1yBR2S6hyQCu3dBmYVg&usqp=CAU">
+  </a>
+  </div>
+
+</div>
+

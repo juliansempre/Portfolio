@@ -8,6 +8,7 @@ import { ApresentacaoComponent } from './components/apresentacao/apresentacao.co
 import { ProjetosComponent } from './components/projetos/projetos.component';
 import { HttpClientModule } from '@angular/common/http';
 import { RodapeComponent } from './components/rodape/rodape.component';
+import { DestaquesComponent } from './components/destaques/destaques.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { RodapeComponent } from './components/rodape/rodape.component';
     HeaderComponent,
     ApresentacaoComponent,
     ProjetosComponent,
-    RodapeComponent
+    RodapeComponent,
+    DestaquesComponent
   ],
   imports: [
     BrowserModule,
