@@ -32,3 +32,15 @@ a{
   text-decoration: none;
   color: white;
 }
+/* mobile */
+@media only screen and (max-width: 412px) and (max-width: 768px){
+.containerDestaques{
+  display: inline;
+  margin-top: 300px;
+  height: auto;
+}
+.card{
+  transform: scale(0.8);
+  margin-left: -18px;
+}
+}

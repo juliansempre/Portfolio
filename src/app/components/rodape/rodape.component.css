@@ -10,3 +10,9 @@ display: flex;
 font-size: 18px;
 margin-top: 30px;
 }
+/* mobile */
+@media only screen and (max-width: 412px) and (max-width: 768px){
+  .containerrodape{
+    height: 20vh;
+  }
+}
