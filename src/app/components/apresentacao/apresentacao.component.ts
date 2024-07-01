@@ -24,7 +24,7 @@ textoTela(){
 const texto: string[] = [
   'Olá! Eu sou o Julian.',
   `Fascinado por tecnologia, brasileiro nascido em 1992.
-  Estou cursando Análise e Desenvolvimento de Sistemas.
+  Formado em Análise e Desenvolvimento de Sistemas.
   Sou alguém que abraça entusiasticamente desafios,
   assim como todo programador, porém, tenho um apreço
   especial por aqueles que me conduzem para fora da
