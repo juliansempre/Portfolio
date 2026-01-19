@@ -31,11 +31,11 @@ const texto: string[] = [
   minha zona de conforto. Afinal, foi justamente ao
   enfrentar esses desafios que experienciei os maiores
   saltos em minha jornada de crescimento e conhecimento.
-  Estou empenhado em minha jornada estudantil, buscando
-  sabedoria nas plataformas de mídia digital. Nos meus
-  momentos de descontração, aprecio assistir a filmes
-  e séries, e também tenho grande prazer em frequentar
-  a academia para cuidar do meu bem-estar físico.`
+  Estou empenhado e buscando sabedoria nas plataformas 
+  de mídia digital. Nos meus momentos de descontração, 
+  aprecio assistir a filmes e séries, e também tenho 
+  grande prazer em frequentar a academia para cuidar 
+  do meu bem-estar físico.`
 ];
 
 this.titulo = texto[0];
