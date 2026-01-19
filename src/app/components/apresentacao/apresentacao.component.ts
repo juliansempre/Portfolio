@@ -23,7 +23,7 @@ ngAfterViewInit() {
 textoTela(){
 const texto: string[] = [
   'Olá! Eu sou o Julian.',
-  `Fascinado por tecnologia, brasileiro nascido em 1992.
+  `Fascinado por tecnologia, brasileiro.
   Formado em Análise e Desenvolvimento de Sistemas.
   Sou alguém que abraça entusiasticamente desafios,
   assim como todo programador, porém, tenho um apreço
@@ -32,7 +32,7 @@ const texto: string[] = [
   enfrentar esses desafios que experienciei os maiores
   saltos em minha jornada de crescimento e conhecimento.
   Estou empenhado e buscando sabedoria nas plataformas 
-  de mídia digital. Nos meus momentos de descontração, 
+  de mídias digitais. Nos meus momentos de descontração, 
   aprecio assistir a filmes e séries, e também tenho 
   grande prazer em frequentar a academia para cuidar 
   do meu bem-estar físico.`
