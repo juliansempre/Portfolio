@@ -17,9 +17,9 @@ export class HeaderComponent implements AfterViewInit {
   traco = "";
   link: string[] = [
     'mailto:julian_sempre@hotmail.com',
-    'https://www.linkedin.com/in/julian-silva/',
+    'https://www.linkedin.com/in/julian-silva-196b7813b/',
     'https://github.com/juliansempre',
-    'https://www.instagram.com/juliandev.webart/'
+    'https://www.instagram.com/'
   ];
 
   // Construtor
